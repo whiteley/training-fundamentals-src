@@ -25,17 +25,5 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-  tools:
-    image: cnfltraining/training-tools:5.5
-    hostname: tools
-    container_name: tools
-    volumes:
-      - ${PWD}:/data
-    working_dir: /data
-    networks:
-      - confluent
-    command: /bin/bash
-    tty: true
-
 networks:
   confluent:

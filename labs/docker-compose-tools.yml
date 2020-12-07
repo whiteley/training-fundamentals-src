@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  tools:
+    image: cnfltraining/training-tools:5.5
+    hostname: tools
+    container_name: tools
+    volumes:
+      - ${PWD}:/data
+    working_dir: /data
+    networks:
+      - confluent
+    command: /bin/bash
+    tty: true
+
+networks:
+  confluent:
